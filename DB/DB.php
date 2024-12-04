@@ -13,8 +13,7 @@ try {
     $db_exists = $conn->query("SHOW DATABASES LIKE '$db_name'")->rowCount();
 
     if (!$db_exists) {
-
-        $conn->exec("CREATE DATABASE IF NOT EXISTS $db_name");
+        $conn->exec("CREATE DATABASE $db_name");
     }
 
     // Step 3: Connect to the specific database
@@ -40,17 +39,16 @@ try {
         category_id INT NOT NULL,
         comment TEXT NOT NULL,
         timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
-        FOREIGN KEY (voter_id) REFERENCES employees(id),
-        FOREIGN KEY (nominee_id) REFERENCES employees(id),
-        FOREIGN KEY (category_id) REFERENCES categories(id),
-        CHECK (voter_id <> nominee_id)
+        FOREIGN KEY (voter_id) REFERENCES employees(id) ON DELETE CASCADE,
+        FOREIGN KEY (nominee_id) REFERENCES employees(id) ON DELETE CASCADE,
+        FOREIGN KEY (category_id) REFERENCES categories(id) ON DELETE CASCADE,
+        CHECK (voter_id <> nominee_id),
+        UNIQUE (voter_id, nominee_id, category_id) -- Prevent duplicate votes for the same nominee in the same category
     );
     ";
 
     // Execute the SQL to create tables
     $conn->exec($tables_sql);
-
-
 
 } catch (PDOException $e) {
     die("Connection failed: " . $e->getMessage());

@@ -1,10 +1,10 @@
 <?php
 require_once "../../htdocs/Pabau/Components/nav-bar.php";
-require_once "../Pabau/Controller/vote.php";
+include "../Pabau/Controller/vote.php";
 
 
 if (!isset($_SESSION['employee_id'])) {
-    header("Location: login_view.php");
+    header("Location: login.php");
     exit;
 }
 
@@ -18,7 +18,7 @@ if (!isset($_SESSION['employee_id'])) {
     <p style="color:green;">Your vote has been submitted successfully!</p>
 <?php endif; ?>
 
-<form method="POST" action="../Pabau/Controller/vote.php">
+<form method="POST" action="/Pabau/Controller/vote.php">
     <label>Nominee:</label>
     <select name="nominee" required>
         <option value="">Select an employee</option>
