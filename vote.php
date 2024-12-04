@@ -5,31 +5,16 @@ if (!isset($_SESSION['employee_id'])) {
     exit;
 }
 
-$voter_id = $_SESSION['employee_id'];
 $voter_name = $_SESSION['employee_name'];
-
-
 ?>
 
-
-<h1>Hello, <?php echo htmlspecialchars($voter_name); ?>!</h1>
+    <h1>Hello, <?php echo htmlspecialchars($voter_name); ?>!</h1>
     <p>Welcome to the voting page.</p>
     <form method="POST" action="../logic/vote_logic.php">
         <label>Nominee:</label>
         <select name="nominee" required>
             <option value="">Select an employee</option>
-            <?php
-            include '../db_connect.php';
-
-            $stmt = $conn->prepare("SELECT id, name FROM employees WHERE id != :voter_id");
-            $stmt->bindParam(':voter_id', $voter_id);
-            $stmt->execute();
-            $employees = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-            foreach ($employees as $employee) {
-                echo '<option value="' . $employee['id'] . '">' . htmlspecialchars($employee['name']) . '</option>';
-            }
-            ?>
+            <?php include '../logic/get_employees.php'; ?>
         </select>
         <br>
         <label>Category:</label>
@@ -45,4 +30,3 @@ $voter_name = $_SESSION['employee_name'];
         <br>
         <button type="submit">Submit Vote</button>
     </form>
-    <a href="../logout.php">Logout</a>

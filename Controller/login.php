@@ -15,6 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if ($employee) {
             $_SESSION['employee_id'] = $employee['id'];
             $_SESSION['employee_name'] = $employee['name'];
+            $_SESSION['loggedIn'] = true;
             header("Location: ../vote.php");
             exit;
         } else {
