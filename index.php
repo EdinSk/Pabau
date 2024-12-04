@@ -1,3 +1,2 @@
 <?php 
-
-echo "hello World";
+require_once "../../htdocs/Pabau/Components/nav-bar.php";
