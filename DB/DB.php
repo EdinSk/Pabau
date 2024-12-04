@@ -1,5 +1,4 @@
 <?php
-// Database credentials
 $host = "localhost";
 $db_name = "voting_system";
 $username = "root";
@@ -22,7 +21,7 @@ try {
     // Step 4: Connect to the specific database
     $conn->exec("USE $db_name");
 
-    // Optional: Create tables if they don't exist (ensures idempotence)
+    // Optional: Create tables if they don't exist
     $tables_sql = "
     CREATE TABLE IF NOT EXISTS employees (
         id INT AUTO_INCREMENT PRIMARY KEY,
