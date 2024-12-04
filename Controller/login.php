@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if ($employee) {
             $_SESSION['employee_id'] = $employee['id'];
             $_SESSION['employee_name'] = $employee['name'];
-            header("Location: ../views/vote.php");
+            header("Location: ../vote.php");
             exit;
         } else {
             echo "Email not found! Please contact the administrator.";
