@@ -1,5 +1,5 @@
 <?php 
-include '../db_connect.php';
+include '../../Pabau/DB/DB.php';
 
 if (!isset($_SESSION['employee_id'])) {
     header("Location: login_view.php");
