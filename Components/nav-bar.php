@@ -17,7 +17,7 @@ $isLoggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] === true;
 
 <!-- Navbar -->
 <div class="navbar">
-    <a href="#" class="logo">My Website</a>
+    <a href="../../Pabau/" class="logo">My Website</a>
     <div class="menu">
         <a href="#">Vote</a>
         <!-- Display Login or Logout based on the session state -->
