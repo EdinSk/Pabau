@@ -1,8 +1,8 @@
 <?php 
-include '../../Pabau/DB/DB.php';
+require_once __DIR__ . "/../DB/DB.php";
 
 if (!isset($_SESSION['employee_id'])) {
-    header("Location: login_view.php");
+    header("Location: Pabau/vote.php");
     exit;
 }
 
@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->execute();
 
         // Step 4: Redirect to the same page with a success message
-        header("Location: vote_view.php?success=1");
+        header("Location: Pabau/vote.php");
         exit;
     } catch (PDOException $e) {
         die("Error: " . $e->getMessage());

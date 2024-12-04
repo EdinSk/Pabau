@@ -1,146 +1,238 @@
 /* Reset default browser styles */
-body, h1, form, label, input, button, .navbar, .menu {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
+body,
+h1,
+form,
+label,
+input,
+button,
+.navbar,
+.menu {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
 }
 
 /* General body styling */
 body {
-    background-color: #f4f4f4;
-    margin: 0;
+  background-color: #f4f4f4;
+  margin: 0;
 }
 
 /* Navbar styles */
 .navbar {
-    background-color: #333;
-    color: white;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .navbar .logo {
-    font-size: 24px;
-    color: white;
-    text-decoration: none;
+  font-size: 24px;
+  color: white;
+  text-decoration: none;
 }
 
 .navbar .menu {
-    display: flex;
-    gap: 20px;
+  display: flex;
+  gap: 20px;
 }
 
 .navbar .menu a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-    padding: 8px 12px;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
 }
 
 .navbar .menu a:hover {
-    background-color: #007bff;
+  background-color: #007bff;
 }
 
 /* Login/Logout link styling */
 #loginLogoutLink {
-    background-color: #007bff;
-    padding: 8px 12px;
-    border-radius: 4px;
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
+  background-color: #007bff;
+  padding: 8px 12px;
+  border-radius: 4px;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
 }
 
 #loginLogoutLink:hover {
-    background-color: #0056b3;
+  background-color: #0056b3;
 }
 
 /* Login container styling */
 .login-container {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 /* Title Styling */
 .login-container h1 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
 }
 
 /* Form styling */
 .login-container form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Label Styling */
 .login-container label {
-    margin-bottom: 8px;
-    font-size: 16px;
-    color: #333;
+  margin-bottom: 8px;
+  font-size: 16px;
+  color: #333;
 }
 
 /* Input field styling */
 .login-container input[type="email"] {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
 }
 
 .login-container input[type="email"]:focus {
-    outline: none;
-    border-color: #007bff;
+  outline: none;
+  border-color: #007bff;
 }
 
 /* Button styling */
 .login-container button {
-    width: 100%;
-    padding: 12px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .login-container button:hover {
-    background-color: #0056b3;
+  background-color: #0056b3;
 }
 
 .login-container input[type="email"]:focus {
-    transition: border-color 0.3s ease;
+  transition: border-color 0.3s ease;
+}
+
+/* vote */
+
+/* Title styling for the page */
+h1 {
+  text-align: center;
+  color: #333;
+  margin-top: 30px;
+}
+
+/* Success message styling */
+p {
+  font-size: 16px;
+  color: #333;
+}
+
+/* Form styling for voting page */
+form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 30px auto;
+  font-size: 16px;
+}
+
+/* Label styling */
+form label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Select box and textarea styling */
+form select,
+form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+/* Focused styling for select and textarea */
+form select:focus,
+form textarea:focus {
+  outline: none;
+  border-color: #007bff;
+  transition: border-color 0.3s ease;
+}
+
+/* Textarea styling */
+form textarea {
+  min-height: 120px;
+}
+
+/* Submit button styling */
+form button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #0056b3;
+}
+
+p {
+    text-align: center;
+}
+
+/* Success message color */
+p[style="color:green;"] {
+  color: green;
+  font-size: 16px;
 }
 
 /* Responsive Design */
 @media (max-width: 600px) {
-    .navbar {
-        flex-direction: column;
-        align-items: center;
-    }
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .login-container {
-        padding: 20px;
-    }
+  .login-container {
+    padding: 20px;
+  }
 
-    .login-container {
-        max-width: 320px;
-    }
+  .login-container {
+    max-width: 320px;
+  }
 }

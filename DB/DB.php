@@ -13,11 +13,8 @@ try {
     $db_exists = $conn->query("SHOW DATABASES LIKE '$db_name'")->rowCount();
 
     if (!$db_exists) {
-        // Create the database if it doesn't exist
+
         $conn->exec("CREATE DATABASE IF NOT EXISTS $db_name");
-        echo "Database '$db_name' created successfully!<br>";
-    } else {
-        echo "Database '$db_name' already exists.<br>";
     }
 
     // Step 3: Connect to the specific database
@@ -52,7 +49,7 @@ try {
 
     // Execute the SQL to create tables
     $conn->exec($tables_sql);
-    echo "All necessary tables are ready!<br>";
+
 
 
 } catch (PDOException $e) {
