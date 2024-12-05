@@ -25,8 +25,6 @@ if (!isset($_SESSION['employee_id'])) {
         <?php echo htmlspecialchars($_GET['success']); ?>
     </p>
 <?php endif; ?>
-<p class="alert alert-danger text-center">This is an error message.</p>
-<p class="alert alert-success text-center">This is a success message.</p>
 
 
 
