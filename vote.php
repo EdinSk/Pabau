@@ -14,9 +14,18 @@ if (!isset($_SESSION['employee_id'])) {
 <h1>Hello, <?php echo htmlspecialchars($_SESSION['employee_name']); ?>!</h1>
 <p>Welcome to the voting page.</p>
 
-<?php if (isset($_GET['success']) && $_GET['success'] == 1): ?>
-    <p style="color:green;">Your vote has been submitted successfully!</p>
+<?php if (isset($_GET['error'])): ?>
+    <div class="alert alert-danger">
+        <?php echo htmlspecialchars($_GET['error']); ?>
+    </div>
 <?php endif; ?>
+
+<?php if (isset($_GET['success'])): ?>
+    <div class="alert alert-success">
+        <?php echo htmlspecialchars($_GET['success']); ?>
+    </div>
+<?php endif; ?>
+
 
 <form method="POST" action="/Pabau/Controller/vote.php">
     <label>Nominee:</label>
