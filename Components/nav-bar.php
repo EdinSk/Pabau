@@ -11,7 +11,7 @@ $isLoggedIn = isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] === true;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Basic Navbar</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to the external CSS -->
+    <link rel="stylesheet" href="../../Pabau/styles.css"> <!-- Link to the external CSS -->
 </head>
 <body>
 

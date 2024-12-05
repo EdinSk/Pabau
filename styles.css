@@ -212,17 +212,36 @@ form button:hover {
 }
 
 p {
-    text-align: center;
+  text-align: center;
 }
 
-/* Success message color */
-p[style="color:green;"] {
-  color: green;
+/* Alert Box Styling */
+.alert {
+  padding: 10px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  margin: 20px auto;
+  width: 90%; /* Ensures it adapts to smaller screens */
+  max-width: 500px;
+  text-align: center; /* Ensures text is centered */
   font-size: 16px;
 }
 
-.text-center{
-  text-align: center;
+.alert-danger {
+  color: #a94442 !important;
+  background-color: #f2dede !important;
+  border-color: #ebccd1 !important;
+}
+
+.alert-success {
+  color: #3c763d !important;
+  background-color: #dff0d8 !important;
+  border-color: #d6e9c6 !important;
+}
+
+/* Ensure text-center applies */
+.text-center {
+  text-align: center !important;
 }
 
 /* Responsive Design */
