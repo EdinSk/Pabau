@@ -15,13 +15,13 @@ if (!isset($_SESSION['employee_id'])) {
 <p>Welcome to the voting page.</p>
 
 <?php if (isset($_GET['error'])): ?>
-    <div class="alert alert-danger">
+    <div class="alert alert-danger text-center">
         <?php echo htmlspecialchars($_GET['error']); ?>
     </div>
 <?php endif; ?>
 
 <?php if (isset($_GET['success'])): ?>
-    <div class="alert alert-success">
+    <div class="alert alert-success text-center">
         <?php echo htmlspecialchars($_GET['success']); ?>
     </div>
 <?php endif; ?>
