@@ -145,11 +145,6 @@ h1 {
   margin-top: 30px;
 }
 
-/* Success message styling */
-p {
-  font-size: 16px;
-  color: #333;
-}
 
 /* Form styling for voting page */
 form {
@@ -215,8 +210,8 @@ p {
   text-align: center;
 }
 
-/* Alert Box Styling */
-.alert {
+/* Alert Box Styling for <p> Elements */
+p.alert {
   padding: 10px;
   border: 1px solid transparent;
   border-radius: 5px;
@@ -227,22 +222,20 @@ p {
   font-size: 16px;
 }
 
-.alert-danger {
-  color: #a94442 !important;
-  background-color: #f2dede !important;
-  border-color: #ebccd1 !important;
+/* Specific Styles for Error Alert */
+p.alert-danger {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
 }
 
-.alert-success {
-  color: #3c763d !important;
-  background-color: #dff0d8 !important;
-  border-color: #d6e9c6 !important;
+/* Specific Styles for Success Alert */
+p.alert-success {
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
 }
 
-/* Ensure text-center applies */
-.text-center {
-  text-align: center !important;
-}
 
 /* Responsive Design */
 @media (max-width: 600px) {

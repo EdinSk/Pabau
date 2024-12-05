@@ -15,16 +15,19 @@ if (!isset($_SESSION['employee_id'])) {
 <p>Welcome to the voting page.</p>
 
 <?php if (isset($_GET['error'])): ?>
-    <div class="alert alert-danger text-center">
+    <p class="alert alert-danger text-center">
         <?php echo htmlspecialchars($_GET['error']); ?>
-    </div>
+    </p>
 <?php endif; ?>
 
 <?php if (isset($_GET['success'])): ?>
-    <div class="alert alert-success text-center">
+    <p class="alert alert-success text-center">
         <?php echo htmlspecialchars($_GET['success']); ?>
-    </div>
+    </p>
 <?php endif; ?>
+<p class="alert alert-danger text-center">This is an error message.</p>
+<p class="alert alert-success text-center">This is a success message.</p>
+
 
 
 <form method="POST" action="/Pabau/Controller/vote.php">
