@@ -19,10 +19,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             header("Location: ../vote.php");
             exit;
         } else {
-            echo "Email not found! Please contact the administrator.";
+            // Store error message in session and redirect to login page
+            $_SESSION['error'] = "Email not found! Please input valid email.";
+            header("Location: /Pabau/login.php");
+            exit;
         }
     } catch (PDOException $e) {
-        echo "Error: " . $e->getMessage();
+        $_SESSION['error'] = "Error: " . $e->getMessage();
+        header("Location: /Pabau/login.php");
+        exit;
     }
 }
-?>

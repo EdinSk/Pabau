@@ -1,4 +1,4 @@
-<?php 
+<?php
 require_once "DB/DB.php";
 
 function getCategoriesAndVotes($conn) {
@@ -9,7 +9,7 @@ function getCategoriesAndVotes($conn) {
             COUNT(v.id) AS total_votes,
             e.name AS top_nominee_name,
             e.id AS top_nominee_id,
-            MAX(votes_count) AS most_votes
+            MAX(subquery.votes_count) AS most_votes
         FROM categories c
         LEFT JOIN votes v ON v.category_id = c.id
         LEFT JOIN employees e ON e.id = v.nominee_id
@@ -33,5 +33,4 @@ function getCategoriesAndVotes($conn) {
 $categories = getCategoriesAndVotes($conn);
 
 // Display the results
-
 ?>
