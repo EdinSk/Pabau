@@ -6,7 +6,7 @@ if (session_status() == PHP_SESSION_NONE) {
 require_once __DIR__ . "/../DB/DB.php";
 
 if (!isset($_SESSION['employee_id'])) {
-    header("Location: /Pabau/login.php");
+    echo json_encode(['success' => false, 'error' => 'You are not logged in.']);
     exit;
 }
 
@@ -20,12 +20,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     try {
         // Validate the form data
         if (empty($nominee_id) || empty($category_id) || empty($comment)) {
-            header("Location: /Pabau/vote.php?error=" . urlencode("All fields are required!"));
+            echo json_encode(['success' => false, 'error' => 'All fields are required!']);
             exit;
         }
 
         if ($nominee_id == $voter_id) {
-            header("Location: /Pabau/vote.php?error=" . urlencode("You cannot vote for yourself!"));
+            echo json_encode(['success' => false, 'error' => 'You cannot vote for yourself!']);
             exit;
         }
 
@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt_check->execute();
 
         if ($stmt_check->fetchColumn() > 0) {
-            header("Location: /Pabau/vote.php?error=" . urlencode("You have already voted for this nominee in this category!"));
+            echo json_encode(['success' => false, 'error' => 'You have already voted for this nominee in this category!']);
             exit;
         }
 
@@ -57,15 +57,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->bindParam(':comment', $comment);
         $stmt->execute();
 
-        // Redirect with success message
-        header("Location: /Pabau/vote.php?success=" . urlencode("Your vote has been submitted successfully!"));
+        // Return success message as JSON
+        echo json_encode(['success' => true, 'message' => 'Your vote has been submitted successfully!']);
         exit;
 
     } catch (PDOException $e) {
-        header("Location: /Pabau/vote.php?error=" . urlencode("Database error: " . $e->getMessage()));
+        echo json_encode(['success' => false, 'error' => 'Database error: ' . $e->getMessage()]);
         exit;
     } catch (Exception $e) {
-        header("Location: /Pabau/vote.php?error=" . urlencode($e->getMessage()));
+        echo json_encode(['success' => false, 'error' => $e->getMessage()]);
         exit;
     }
 }
@@ -82,7 +82,6 @@ try {
     $stmt_categories->execute();
     $categories = $stmt_categories->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
-    header("Location: /Pabau/vote.php?error=" . urlencode("Database error: " . $e->getMessage()));
+    echo json_encode(['success' => false, 'error' => 'Database error: ' . $e->getMessage()]);
     exit;
 }
-?>
