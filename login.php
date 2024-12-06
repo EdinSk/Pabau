@@ -16,3 +16,5 @@ require_once "../../htdocs/Pabau/Components/nav-bar.php";
         <button type="submit">Login</button>
     </form>
 </div>
+
+<?php require_once "../../htdocs/Pabau/Components/footer.php"; ?>

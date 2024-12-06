@@ -56,3 +56,6 @@ if (!isset($_SESSION['employee_id'])) {
 
     <button type="submit">Submit Vote</button>
 </form>
+
+
+<?php require_once "../../htdocs/Pabau/Components/footer.php"; ?>
