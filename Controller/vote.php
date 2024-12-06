@@ -6,7 +6,7 @@ if (session_status() == PHP_SESSION_NONE) {
 require_once __DIR__ . "/../DB/DB.php";
 
 if (!isset($_SESSION['employee_id'])) {
-    echo json_encode(['success' => false, 'error' => 'You are not logged in.']);
+    header("Location: ../Pabau/login.php");
     exit;
 }
 

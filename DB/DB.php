@@ -49,8 +49,11 @@ try {
 
     // Execute the SQL to create tables
     $conn->exec($tables_sql);
-
 } catch (PDOException $e) {
     die("Connection failed: " . $e->getMessage());
 }
-?>
+
+// Check if the current page is DB.php
+if (basename($_SERVER['PHP_SELF']) === 'DB.php') {
+    echo '<a href="http://localhost/Pabau/">Go back to start</a>';
+}
