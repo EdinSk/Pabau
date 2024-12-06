@@ -50,9 +50,6 @@ try {
     // Execute the SQL to create tables
     $conn->exec($tables_sql);
 
-    // Step 5: Redirect to the start of the script
-    header("Location: "); // Change 'index.php' to the starting page of your script
-
 } catch (PDOException $e) {
     die("Connection failed: " . $e->getMessage());
 }
